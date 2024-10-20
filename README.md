@@ -34,97 +34,77 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 &nbsp;
 &nbsp;
 
-<p>Use "Remote Desktop Connection" to connect to the virtual machine.</p>
-<img height="80%" width="80%" alt="Remote Connection"  src="https://github.com/golayjustin/osticket-prereqs/assets/39071760/0e7486ff-3c5f-4541-931b-305d7ee428f5">
-&nbsp;
-&nbsp;
+<p>Next simply connect to your newly created VM using RDP using the public IPv4 address. If you are a Mac user you will have to download Microsoft RDP. 
+</p>
+<img src="https://i.imgur.com/uLVKzxS.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
 
-<p>Install Internet Information Services in Windows with CGI and Common HTTP Features.</p>
-<img height="80%" width="80%" alt="Internet Information Services" src="https://github.com/golayjustin/osticket-prereqs/assets/39071760/acab85e0-5174-4d6d-a2e8-661622de43d4">
-&nbsp;
-&nbsp;
-
-<p>Download and install PHP Manager for IIS.</p>
-<img height="80%" width="80%" alt="PHP Manager for IIS" src="https://i.imgur.com/aeOBNB4.png">
-&nbsp;
-&nbsp;
-
-<p>Download and install the Rewrite Module.</p>
-<img height="80%" width="80%" alt="Rewrite Module" src="https://i.imgur.com/G0H8GRa.png">
-&nbsp;
-&nbsp;
-
-<p>Create the directory C:\PHP</p>
-<img height="80%" width="80%" alt="PHP directory" src="https://i.imgur.com/Jk63pjQ.png">
-&nbsp;
-&nbsp;
-
-<p>Download PHP 7.3.8 and unzip the contents into C:\PHP</p>
-<img height="80%" width="80%" alt="PHP" src="https://i.imgur.com/Jk63pjQ.png">
-&nbsp;
-&nbsp;
-
-<p>Download and install Microsoft Visual C++.</p>
-<img height="80%" width="80%" alt="Visual C++" src="https://i.imgur.com/IY4XxGF.png">
-&nbsp;
-&nbsp;
-
-<p>Download and install MySQL 5.5.62.</p>
-<img height="80%" width="80%" alt="MySQL" src="https://i.imgur.com/CiOTZG9.png">
-&nbsp;
-&nbsp;
-
-<img height="80%" width="80%" alt="MySQL Configuration" src="https://i.imgur.com/a7eqn9V.png">
-&nbsp;
-&nbsp;
-
-<p>Open IIS as an Admin.</p>
-<img height="80%" width="80%" alt="IIS as Admin" src="https://i.imgur.com/ERATRAk.png">
-&nbsp;
-&nbsp;
-
-<p>Register PHP from within IIS and reload IIS.</p>
-<img height="80%" width="80%" alt="Register PHP" src="https://i.imgur.com/fHlIpIA.png">
-&nbsp;
-&nbsp;
-
-<p>Download osTicket. Copy "upload" folder to C:\inetpub\wwwroot and rename "upload" to "osTicket". Reload IIS.</p>
-<img height="80%" width="80%" alt="Rename upload to osTicket" src="https://i.imgur.com/MOU6SCF.png">
-&nbsp;
-&nbsp;
-
-<img height="80%" width="80%" alt="Reload IIS" src="https://i.imgur.com/A45y48g.png">
-&nbsp;
-&nbsp;
-
-<p>Browse "*.80".</p>
-<img height="80%" width="80%" alt="Browse *.80" src="https://i.imgur.com/cSeJ5U7.png">
-&nbsp;
-&nbsp;
-
-<p>In PHP Manager, enable php_imap, php_intel, and php_opcache. Refresh browser.</p>
-<img height="80%" width="80%" alt="php_imap" src="https://i.imgur.com/RTz8xJ2.png">
-&nbsp;
-&nbsp;
-
-<img height="80%" width="80%" alt="php_intel" src="https://i.imgur.com/NLH6X51.png">
-&nbsp;
-&nbsp;
-
-<img height="80%" width="80%" alt="php_opcache" src="https://i.imgur.com/5khu3OX.png">
-&nbsp;
-&nbsp;
-
-<p>Rename "ost-sampleconfig" to "ost-config".</p>
-<img height="80%" width="80%" alt="Rename to ost-config" src="https://i.imgur.com/0Rof4Nq.png">
-&nbsp;
-&nbsp;
-
-<p>Assign permissions to ost-config by disabling inheritance and giving all permissions to "Everyone".</p>
-<img height="80%" width="80%" alt="Permissions for ost-config" src="https://i.imgur.com/R2lhUus.png">
-&nbsp;
-&nbsp;
-
+<p>
+</p>
+<p>
+Now that you are connected to your VM you will have to enable IIS. Simply access the control panel then select uninstall a program. Off to the left select "Turn windows features on or off". A list will appear then you will enable Internet Information Services.
+</p>  
+<img src="https://i.imgur.com/qtEnuWu.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+</p>
+<p>
+Excellent. Now that you have enabled IIS we need to install Web Platform Installer. I have provided a link here: https://drive.google.com/drive/u/0/folders/1APMfNyfNzcxZC6EzdaNfdZsUwxWYChf6
+  That link will provide you with all of the material you need to download to get osTicket up and running. Simply click the link and install the Web Platform Installer
+</p>
+<img src="https://i.imgur.com/AxHCfQ6.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>  
+</p>
+<p>
+Once you have installed Web Installer Platform open it. From inside the application you are going to install MySQL 5.5 Afterwards install x86 version of PHP up until 7.3. There are some failed files such as C++ redistributable package as well as PHP 7.3.8 and PHP Manager for IIS those files can be found with the install link.
+</p>
+<img src="https://i.imgur.com/JJ8bZeJ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<p>
+</p>
+<p>
+Next download osTicket. Then extract and copy the "upload" folder into c:\inetpub\wwwroot. Afterwards rename the folder to osTicket
+</P>
+<img src="https://i.imgur.com/TUGiSKi.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<br />
+<p>
+</p>
+<p>
+Open IIS Manager and restart the server. Once inside IIS manager go to Sites->Default->osTicket on the right, click "Browse*.80" from there your default browser should open osTicket webserver.
+</p>
+<img src="https://i.imgur.com/4AkTkV0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p>
+</p>
+<p>
+Go back into IIS manager and enable some extensions. To do this you have to go to Sites->Default->osTicket
+Then double click on PHP manager. Click on "Disable or enable an extension" Enable "php_intl.dll" & "php_opcache.dll" then refresh the osTicket webserver and obsereve the changes "Intl Extension" should now be enabled. 
+</p>
+<img src="https://i.imgur.com/APZgUTT.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p>
+</p>
+<p>
+Go back into c:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php rename the file to c:\inetpub\wwwroot\osTicket\include\ost-config.php
+Assign permissions to ost-config.php Disable inheritance->Removeall
+New Permissions->Everyone->all
+</p>
+<img src="https://i.imgur.com/1nYaYGe.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p>
+</p>
+<p>
+Afterwards continue setting up osTicket in the browser (click continue) then you will name the Helpdesk to your liking. Select a default email that will receive emails from customers who submit tickets. 
+</p>
+<img src="https://i.imgur.com/RmVk3q5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br />
+<p>
+<p>Continue Setting up osticket in the browser MySQL Database: osTicket MySQL Username: root MySQL Password: Password1 Click “Install Now!”
+Congratulations, hopefully it is installed with no errors!
+Clean up
+Delete: C:\inetpub\wwwroot\osTicket\setup
+Set Permissions to “Read” only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+Login to the osTicket Admin Panel (http://localhost/osTicket/scp/login.php)
 <p>Resume set up in the browser by inputing required information.</p>
 <img height="80%" width="80%" alt="Input information into osTicket" src="https://i.imgur.com/7BiU7jq.png">
 &nbsp;
